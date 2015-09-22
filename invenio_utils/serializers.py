@@ -51,12 +51,12 @@ class ZlibMarshal(object):
             return marshal.loads(zlib.decompress(astring))
         except zlib.error as e:
             raise SerializerError(
-                'Cannot decompress object ("{}")'.format(str(e))
+                'Cannot decompress object ("{0}")'.format(str(e))
             )
         except Exception as e:
             # marshal module does not provide a proper Exception model
             raise SerializerError(
-                'Cannot restore object ("{}")'.format(str(e))
+                'Cannot restore object ("{0}")'.format(str(e))
             )
 
     @staticmethod
@@ -80,11 +80,11 @@ class ZlibPickle(object):
             return pickle.loads(zlib.decompress(astring))
         except zlib.error as e:
             raise SerializerError(
-                'Cannot decompress object ("{}")'.format(str(e))
+                'Cannot decompress object ("{0}")'.format(str(e))
             )
         except pickle.UnpicklingError as e:
             raise SerializerError(
-                'Cannot restore object ("{}")'.format(str(e))
+                'Cannot restore object ("{0}")'.format(str(e))
             )
 
     @staticmethod
@@ -108,11 +108,11 @@ class LzmaPickle(object):
             return pickle.loads(lzma.decompress(astring))
         except lzma.LZMAError as e:
             raise SerializerError(
-                'Cannot decompress object ("{}")'.format(str(e))
+                'Cannot decompress object ("{0}")'.format(str(e))
             )
         except pickle.UnpicklingError as e:
             raise SerializerError(
-                'Cannot restore object ("{}")'.format(str(e))
+                'Cannot restore object ("{0}")'.format(str(e))
             )
 
     @staticmethod

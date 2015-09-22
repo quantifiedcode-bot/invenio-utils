@@ -172,7 +172,7 @@ class TypeheadWidget(object):
         if callable(autocomplete_list):
             self.autocomplete_list = autocomplete_list()
         else:
-            self.autocomplete_list = '["{}"]'.format(
+            self.autocomplete_list = '["{0}"]'.format(
                 '","'.join(autocomplete_list))
         self.data_provide = data_provide
 

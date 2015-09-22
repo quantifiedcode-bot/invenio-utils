@@ -121,7 +121,7 @@ def import_related_module(package, pkg_path, related_name,
     except Exception as e:
         if ignore_exceptions:
             current_app.logger.exception(
-                'Can not import "{}" package'.format(package)
+                'Can not import "{0}" package'.format(package)
             )
         else:
             raise e
